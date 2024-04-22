@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hind+Vadodara:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap');
+:root {
+	--accent: #d1c9ff;
+	--grey-4: whitesmoke;
+	--grey-60: #6d6d6d;
+	--grey-8: #ececec;
+	--dark-opacity-30: rgba(12, 12, 12, 0.3);
+	--dark-opacity-50: rgba(12, 12, 12, 0.5);
+	--grey-35: #aaa;
+	--accent-dark: #c6bef4;
+	--dark-opacity-65: rgba(12, 12, 12, 0.65);
+	--white-2: white;
+	--black-2: black;
+	--border: #eee;
+	--white: #fff;
+	--black: #000;
+	--selectbg: #eaeaea;
+	--bluebg: #2c1e4a;
+	--input-highlight: #8ec4ef;
+	--input-shadow: #e3f2fdd7;
+}
+@font-face {
+	font-family: 'AcuminProWideBold';
+	src: url('./AcuminProWideBold.otf');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+@font-face {
+	font-family: 'simple';
+	src: url('./simple.woff2');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+@font-face {
+	font-family: 'yoga';
+	src: url('./yoga.woff2');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+@font-face {
+	font-family: 'yoga-bold';
+	src: url('./yoga-bold.woff2');
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 4px 16px;
+}
+
+@media screen and (min-width: 768px) {
+	.wrapper {
+		padding: 16px 32px;
+	}
+}

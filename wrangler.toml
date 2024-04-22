@@ -1,0 +1,30 @@
+name = "mainblocs-web-v2"
+account_id = "442a9f5f4ae01009c8ab3e8a0775b90f"
+compatibility_date = "2023-03-14"
+compatibility_flags = ["nodejs_compat"]
+main = "./.svelte-kit/cloudflare/_worker.js"
+site.bucket = "./.svelte-kit/cloudflare"
+#worker_dev = true
+#main = "./.svelte-kit/cloudflare/_worker.js"
+#site.bucket = "./.svelte-kit/cloudflare"
+#build.command = "npm run build"
+#cwd = "./.svelte-kit/cloudflare"
+#watch_dir = "src"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mainblocs"
+database_id = "9a6cee46-64f0-4883-af38-5e9516b05cb7"
+preview_database_id = "9a6cee46-64f0-4883-af38-5e9516b05cb7"
+migrations_dir = 'migrations'
+
+[vars]
+PUBLIC_DEV = 'DEV'
+LIBSQL_DB_URL = "https://mainblocs-surendrakandel.turso.io"
+CLOUDFLARE_API_TOKEN = "vPzfWZ7Yby2YKW8rKnHL3nY-Qc81IddfGfvgbpjQ"
+LIBSQL_DB_AUTH_TOKEN = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ4MDE4NjUsImlkIjoiMWMwNzUyN2MtNTNmNC0xMWVlLWEzYzQtZGU1ZDllYzVmNWRjIn0.rvLOR_Lqbm96I-9vIqWv25fVtfTBj1ezIWfVmkvzPlhz1IS9JoVQOc_uBNcRJMznT2JWuktmx5Z8qP2CKCpPCA"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "mainbloc"
+preview_bucket_name = "mainblocs-dev"
