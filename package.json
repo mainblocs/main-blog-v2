@@ -31,7 +31,5 @@
 		"vitest": "^1.2.0"
 	},
 	"type": "module",
-	"dependencies": {
-		"adapter-cloudflare-node\n": "link:@sveltejs/adapter-cloudflare-node\n"
-	}
+	"dependencies": {}
 }
