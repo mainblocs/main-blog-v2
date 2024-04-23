@@ -62,7 +62,7 @@
 		<div class="bg-[#43302A] md:mt-8 py-24 flex flex-col md:flex-row gap-2 items-center">
 			<div class="w-full md:w-1/2">
 				<span
-					class="w-2/3 block max-w-[500px] border-t-2 border-white border-spacing-3 px-4 md:px-16 " />
+					class="w-2/3 block max-w-[500px] border-t-2 border-white border-spacing-3 px-4 md:px-16 " ></span>
 				<h3
 					class="w-full font-yoga text-2xl md:text-3xl pt-5 max-w-[800px] text-gray-200 px-4
 					md:px-16 ">
