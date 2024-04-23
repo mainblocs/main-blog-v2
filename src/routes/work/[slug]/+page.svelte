@@ -114,7 +114,7 @@
                 <span class="font-semibold">{data?.project?.testimonial.author.name}<span
                     class="hidden font-semibold sm:inline"
                     >,
-                </span><br class="sm:hidden" /><span class="sm:font-semibold"
+                </span><span class="sm:font-semibold"
                     >{data?.project?.testimonial.author.role}</span
                 >
             </figcaption>
@@ -141,7 +141,7 @@
         <div
             class="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50"
             >
-         <HeroSvg  />
+         <HeroSvg/>
         </div>
         <div class="max-w-2xl" style="opacity: 1; transform: none;">
             <h2>
@@ -181,7 +181,7 @@
                                         clip-rule="evenodd"
                                         d="M24 3 18 .5v2H0v1h18v2L24 3Z"
                                     /></svg
-                                ><span class="absolute inset-0" /></a
+                                ></a
                             >
                         </div>
                     </article>
