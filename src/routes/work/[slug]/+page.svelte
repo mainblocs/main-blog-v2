@@ -1,6 +1,4 @@
 <script lang="ts">
-    // @ts-nocheck
-	import Contact from '$components/Contact.svelte';
 	import HeroSvg from '$components/HeroSvg.svelte';
 	export let data;
 </script>
@@ -143,7 +141,7 @@
         <div
             class="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50"
             >
-         <HeroSvg height="h-[100%]" />
+         <HeroSvg  />
         </div>
         <div class="max-w-2xl" style="opacity: 1; transform: none;">
             <h2>
