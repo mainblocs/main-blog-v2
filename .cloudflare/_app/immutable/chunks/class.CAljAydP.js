@@ -1,1 +1,0 @@
-import{h as t,d as c}from"./disclose-version.BD2IXOaX.js";function i(s,e){var l=s.__className,a=_(e);t&&s.className===a?s.__className=a:(l!==a||t&&s.className!==a)&&(e==null?s.removeAttribute("class"):c(s,a),s.__className=a)}function _(s){return s??""}function r(s,e,l){l?s.classList.add(e):s.classList.remove(e)}export{i as s,r as t};
