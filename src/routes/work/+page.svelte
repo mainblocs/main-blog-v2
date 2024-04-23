@@ -118,7 +118,7 @@
   </div>
   <div class="relative isolate bg-neutral-50 py-16 sm:py-28 md:py-32 mt-16">
     <div class="max-w-2xl lg:max-w-none relative">
-      <HeroSvg height="h-[400px]" />
+      <HeroSvg  />
       <figure class="mx-auto max-w-4xl">
         <blockquote
           class="relative font-display text-3xl font-medium tracking-tight
