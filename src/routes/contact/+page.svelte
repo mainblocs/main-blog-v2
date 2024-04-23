@@ -166,7 +166,7 @@
                 id=":r5:"
                 name="name"
                 autocomplete="name"
-                on:change={(event) => {
+                onchange={(event) => {
                   if (event.target.value.length > 2) {
                     data.name.error = false
                   }
@@ -201,7 +201,7 @@
                 autocomplete="email"
                 placeholder=""
                 bind:value={data.email.value}
-                on:change={(event) => {
+                onchange={(event) => {
                   if (event.target.value.length > 5 && event.target.value.includes('@')) {
                     data.email.error = false
                   }
@@ -235,7 +235,7 @@
                 autocomplete="organization"
                 placeholder=""
                 bind:value={data.company.value}
-                on:change={(event) => {
+                onchange={(event) => {
                   if (event.target.value.length > 2) {
                     data.company.error = false
                   }
@@ -271,7 +271,7 @@
                 autocomplete="tel"
                 placeholder=""
                 bind:value={data.phone.value}
-                on:change={(event) => {
+                onchange={(event) => {
                   if (event.target?.value?.length == 10) {
                     data.phone.error = false
                   }
@@ -307,7 +307,7 @@
                 name="message"
                 placeholder=""
                 bind:value={data.message.value}
-                on:change={(event) => {
+                onchange={(event) => {
                   if (event.target?.value?.length > 10) {
                     data.message.error = false
                   }
@@ -350,7 +350,7 @@
                       checked:border-[0.5rem] checked:border-neutral-950
                       focus-visible:ring-1 focus-visible:ring-neutral-950
                       focus-visible:ring-offset-2"
-                      on:change={(event) => {
+                      onchange={(event) => {
                         data.budget.value = '50'
                       }}
                       value="50" />
@@ -365,7 +365,7 @@
                       checked:border-[0.5rem] checked:border-neutral-950
                       focus-visible:ring-1 focus-visible:ring-neutral-950
                       focus-visible:ring-offset-2"
-                      on:change={(event) => {
+                      onchange={(event) => {
                         data.budget.value = '75'
                       }}
                       value="75" />
@@ -380,7 +380,7 @@
                       checked:border-[0.5rem] checked:border-neutral-950
                       focus-visible:ring-1 focus-visible:ring-neutral-950
                       focus-visible:ring-offset-2"
-                      on:change={(event) => {
+                      onchange={(event) => {
                         data.budget.value = '100'
                       }}
                       value="100" />
@@ -395,7 +395,7 @@
                       checked:border-[0.5rem] checked:border-neutral-950
                       focus-visible:ring-1 focus-visible:ring-neutral-950
                       focus-visible:ring-offset-2"
-                      on:change={(event) => {
+                      onchange={(event) => {
                         data.budget.value = '150'
                       }}
                       value="150" />
@@ -413,7 +413,7 @@
           <button
             class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2
             border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"
-            on:click|preventDefault|stopPropagation={submit}>
+            onclick|preventDefault|stopPropagation={submit}>
             <h3 class="relative py-2 px-8">Let’s work together</h3>
           </button>
         </form>

@@ -39,13 +39,13 @@
 			autocomplete="email"
 			aria-label="Email address"
 			bind:value={emailStore.value}
-			on:change={change}
+			onchange={change}
 			class="block w-full rounded-2xl border border-neutral-300 bg-white py-4 pl-6 pr-20 text-base/6
 			text-white ring-4 ring-transparent transition placeholder:text-neutral-500
 			focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5" />
 		<div class="absolute inset-y-1 right-1 flex justify-end">
 			<button
-				on:click={subscribe}
+				onclick={subscribe}
 				aria-label="Submit"
 				class="flex aspect-square h-full items-center justify-center rounded-xl bg-black text-white
 				transition hover:bg-neutral-800">
