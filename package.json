@@ -16,9 +16,9 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-cloudflare-node": "https://github.com/wackfx/adapter-cloudflare-node",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-cloudflare": "^4.4.0",
+		"@sveltejs/adapter-cloudflare-node": "https://github.com/wackfx/adapter-cloudflare-node",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"globals": "^15.0.0",
@@ -31,5 +31,7 @@
 		"vitest": "^1.2.0"
 	},
 	"type": "module",
-	"dependencies": {}
+	"dependencies": {
+		"@sveltejs/adapter-cloudflare-workers": "^2.4.0"
+	}
 }

@@ -128,60 +128,38 @@
             errorMessage: 'plese enter your budget',
           }
     }});
-    let modelStore =$state({
-        show:false,
-        message:"",
-        duration: 0,
-    })
-    function showModle(message:string, duration:number){
-        modelStore.update((value)=>{
-            value.show = true
-            value.message = message
-            value.duration = duration
-            return value;
-        })
-        setTimeout(() => {
-            hideModel()
-        }, duration)
-    }
-    function hideModel(){
-        modelStore.update((value)=>{
-            value.show = false
-            value.message = ""
-            value.duration = 0
-            return value;
-        })
-    }
+    
 </script>
   
-<section class="mx-auto max-w-7xl px-3 md:px-6 lg:px-8 mt-40 sm:mt-48 lg:mt-60 font-[yoga]">
-  <div class="mx-auto max-w-2xl lg:max-w-none">
-    <div style="opacity: 1; transform: none;">
+<section class="bg-bgprimary py-32 mt-[70px] text-white">
+ <div class="wrapper px-4">
+  <div class="mx-auto max-w-2xl lg:max-w-none ">
+    <div >
       <h1>
         <span
-          class="block text-base font-semibold text-neutral-950">
+          class="block text-base">
           Contact us
         </span>
         <span class="sr-only">-</span>
         <span
-          class="mt-6 block max-w-5xl text-5xl font-medium
-          tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl">
+          class="py-12 block text-3xl font-medium
+           sm:text-5xl font-yoga max-w-[500px] leading-[70px]">
           Let’s work together
         </span>
       </h1>
-      <div class="mt-6 max-w-3xl text-xl text-neutral-600">
+      <div class="mt-6 max-w-3xl text-xl font-comsans">
         <p>We can’t wait to hear from you.</p>
       </div>
     </div>
   </div>
-  <div class="mx-auto max-w-2xl lg:max-w-none">
+  <div class="mx-auto max-w-2xl lg:max-w-none font-comsans">
     <div class="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
-      <div class="lg:order-last" style="opacity: 1; transform: none;">
+      <div class="lg:order-last" >
         <form>
-          <h2 class="text-base font-semibold text-neutral-950">
+          <h2 class="text-base font-semibold ">
             Work inquiries
           </h2>
-          <div class="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
+          <div class="isolate mt-6 -space-y-px rounded-2xl bg-white  text-black py-12 px-4 md:py-24 md:px-12">
             <div class="group relative z-0 transition-all focus-within:z-10">
               <input
                 type="text"
@@ -195,20 +173,20 @@
                 }}
                 bind:value={data.name.value}
                 class="peer block w-full border border-neutral-300
-                bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950
+                bg-transparent px-6 pb-4 pt-12 text-base/6 
                 ring-4 ring-transparent transition focus:border-neutral-950
                 focus:outline-none focus:ring-neutral-950/5
                 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
               <label
                 for=":r5:"
                 class="pointer-events-none absolute left-6 top-1/2 -mt-3
-                origin-left text-base/6 text-neutral-500 transition-all
+                origin-left text-base/6 transition-all
                 duration-200 peer-focus:-translate-y-4 peer-focus:scale-75
-                peer-focus:font-semibold peer-focus:text-neutral-950
+                peer-focus:font-semibold peer-focus:
                 peer-[:not(:placeholder-shown)]:-translate-y-4
                 peer-[:not(:placeholder-shown)]:scale-75
                 peer-[:not(:placeholder-shown)]:font-semibold
-                peer-[:not(:placeholder-shown)]:text-neutral-950">
+                peer-[:not(:placeholder-shown)]:">
                 Name
               </label>
             </div>
@@ -229,20 +207,20 @@
                   }
                 }}
                 class="peer block w-full border border-neutral-300
-                bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950
+                bg-transparent px-6 pb-4 pt-12 text-base/6 
                 ring-4 ring-transparent transition focus:border-neutral-950
                 focus:outline-none focus:ring-neutral-950/5
                 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
               <label
                 for=":r6:"
                 class="pointer-events-none absolute left-6 top-1/2 -mt-3
-                origin-left text-base/6 text-neutral-500 transition-all
+                origin-left text-base/6 transition-all
                 duration-200 peer-focus:-translate-y-4 peer-focus:scale-75
-                peer-focus:font-semibold peer-focus:text-neutral-950
+                peer-focus:font-semibold peer-focus:
                 peer-[:not(:placeholder-shown)]:-translate-y-4
                 peer-[:not(:placeholder-shown)]:scale-75
                 peer-[:not(:placeholder-shown)]:font-semibold
-                peer-[:not(:placeholder-shown)]:text-neutral-950">
+                peer-[:not(:placeholder-shown)]:">
                 Email
               </label>
             </div>
@@ -263,20 +241,20 @@
                   }
                 }}
                 class="peer block w-full border border-neutral-300
-                bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950
+                bg-transparent px-6 pb-4 pt-12 text-base/6 
                 ring-4 ring-transparent transition focus:border-neutral-950
                 focus:outline-none focus:ring-neutral-950/5
                 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
               <label
                 for=":r7:"
                 class="pointer-events-none absolute left-6 top-1/2 -mt-3
-                origin-left text-base/6 text-neutral-500 transition-all
+                origin-left text-base/6 transition-all
                 duration-200 peer-focus:-translate-y-4 peer-focus:scale-75
-                peer-focus:font-semibold peer-focus:text-neutral-950
+                peer-focus:font-semibold peer-focus:
                 peer-[:not(:placeholder-shown)]:-translate-y-4
                 peer-[:not(:placeholder-shown)]:scale-75
                 peer-[:not(:placeholder-shown)]:font-semibold
-                peer-[:not(:placeholder-shown)]:text-neutral-950">
+                peer-[:not(:placeholder-shown)]:">
                 Company
               </label>
             </div>
@@ -299,20 +277,20 @@
                   }
                 }}
                 class="peer block w-full border border-neutral-300
-                bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950
+                bg-transparent px-6 pb-4 pt-12 text-base/6 
                 ring-4 ring-transparent transition focus:border-neutral-950
                 focus:outline-none focus:ring-neutral-950/5
                 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
               <label
                 for=":r8:"
                 class="pointer-events-none absolute left-6 top-1/2 -mt-3
-                origin-left text-base/6 text-neutral-500 transition-all
+                origin-left text-base/6 transition-all
                 duration-200 peer-focus:-translate-y-4 peer-focus:scale-75
-                peer-focus:font-semibold peer-focus:text-neutral-950
+                peer-focus:font-semibold peer-focus:
                 peer-[:not(:placeholder-shown)]:-translate-y-4
                 peer-[:not(:placeholder-shown)]:scale-75
                 peer-[:not(:placeholder-shown)]:font-semibold
-                peer-[:not(:placeholder-shown)]:text-neutral-950">
+                peer-[:not(:placeholder-shown)]:">
                 Phone
               </label>
               
@@ -335,20 +313,20 @@
                   }
                 }}
                 class="peer block w-full border border-neutral-300
-                bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950
+                bg-transparent px-6 pb-4 pt-12 text-base/6 
                 ring-4 ring-transparent transition focus:border-neutral-950
                 focus:outline-none focus:ring-neutral-950/5
                 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
               <label
                 for=":r9:"
                 class="pointer-events-none absolute left-6 top-1/2 -mt-3
-                origin-left text-base/6 text-neutral-500 transition-all
+                origin-left text-base/6 transition-all
                 duration-200 peer-focus:-translate-y-4 peer-focus:scale-75
-                peer-focus:font-semibold peer-focus:text-neutral-950
+                peer-focus:font-semibold peer-focus:
                 peer-[:not(:placeholder-shown)]:-translate-y-4
                 peer-[:not(:placeholder-shown)]:scale-75
                 peer-[:not(:placeholder-shown)]:font-semibold
-                peer-[:not(:placeholder-shown)]:text-neutral-950">
+                peer-[:not(:placeholder-shown)]:">
                 Message
               </label>
             </div>
@@ -376,7 +354,7 @@
                         data.budget.value = '50'
                       }}
                       value="50" />
-                    <h3 class="text-base/6 text-neutral-950">$1K – $5K</h3>
+                    <h3 class="text-base/6 ">$1K – $5K</h3>
                   </label>
                   <label class="flex gap-x-3">
                     <input
@@ -391,7 +369,7 @@
                         data.budget.value = '75'
                       }}
                       value="75" />
-                    <h3 class="text-base/6 text-neutral-950">$5K – $10K</h3>
+                    <h3 class="text-base/6 ">$5K – $10K</h3>
                   </label>
                   <label class="flex gap-x-3">
                     <input
@@ -406,7 +384,7 @@
                         data.budget.value = '100'
                       }}
                       value="100" />
-                    <h3 class="text-base/6 text-neutral-950">$10K – $15K</h3>
+                    <h3 class="text-base/6 ">$10K – $15K</h3>
                   </label>
                   <label class="flex gap-x-3">
                     <input
@@ -421,7 +399,7 @@
                         data.budget.value = '150'
                       }}
                       value="150" />
-                    <h3 class="text-base/6 text-neutral-950">More than $15K</h3>
+                    <h3 class="text-base/6 ">More than $15K</h3>
                   </label>
                 </div>
               </fieldset>
@@ -433,26 +411,25 @@
           {/if}
           </div>
           <button
-            class="mt-10 inline-flex rounded-full px-4 py-1.5 text-sm
-            font-semibold transition bg-neutral-950 text-white
-            hover:bg-neutral-800"
+            class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2
+            border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"
             on:click|preventDefault|stopPropagation={submit}>
             <h3 class="relative py-2 px-8">Let’s work together</h3>
           </button>
         </form>
       </div>
-      <div style="opacity: 1; transform: none;">
-        <h2 class="text-base font-semibold text-neutral-950">
+      <div  class="max-w-[500px] font-comsans">
+        <h2 class="text-base font-semibold mt-8">
           Our offices
         </h2>
-        <p class="mt-6 text-base text-neutral-600">
+        <p class="mt-6 text-base">
           Prefer doing things in person? We don’t but we have to list our
           addresses here for legal reasons.
         </p>
         <ul role="list" class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
           <li>
-            <address class="text-sm not-italic text-neutral-600">
-              <strong class="text-neutral-950">Los Angeles</strong>
+            <address class="text-sm not-italic ">
+              <strong class="">Los Angeles</strong>
               <br />
               Santa Monica Blvd
               <br />
@@ -465,25 +442,25 @@
           before:bg-neutral-950 after:bg-neutral-950/10 before:left-0
           before:top-0 before:h-px before:w-6 after:left-8 after:right-0
           after:top-0 after:h-px">
-          <h2 class="text-base font-semibold text-neutral-950">
+          <h2 class="text-base font-semibold ">
             Email us
           </h2>
           <dl class="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
             <div>
-              <dt class="font-semibold text-neutral-950">Careers</dt>
+              <dt class="font-semibold ">Careers</dt>
               <dd>
                 <a
-                  class="text-neutral-600 hover:text-neutral-950"
+                  class=" hover:"
                   href="mailto:careers@mainblocs.com">
                   careers@mainblocs.com
                 </a>
               </dd>
             </div>
             <div>
-              <dt class="font-semibold text-neutral-950">Contact</dt>
+              <dt class="font-semibold ">Contact</dt>
               <dd>
                 <a
-                  class="text-neutral-600 hover:text-neutral-950"
+                  class=" hover:"
                   href="mailto:support@mainblocs.com">
                   support@mainblocs.com
                 </a>
@@ -494,5 +471,6 @@
       </div>
     </div>
   </div>
+ </div>
 </section>
   

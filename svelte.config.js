@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-cloudflare-node';
+import adapter from '@sveltejs/adapter-cloudflare-workers';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -19,7 +19,9 @@ const config = {
 		
         },
 
-		adapter: adapter({ fallback: "404.html", routes: { include: ['/*'], exclude: ['<all>', '/sitemap.xml'] }}),
+		adapter: adapter({
+
+    }),
     alias: {
       $src: './src',
       '$src/*': './src/*',

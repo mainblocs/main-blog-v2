@@ -2,9 +2,9 @@
 // @ts-nocheck
 /* eslint-disable no-undef */
 export const navData = $state({
-	headerHeight: "100px",
 	activeIndex: 0,
-	openMenu: false,
+	showPhoneMenu: false,
+	isMenuOpen: false,
 	navItems: [
 		{
 			title: 'about',
@@ -15,7 +15,7 @@ export const navData = $state({
 		},
 		{
 			title: 'our work',
-			link: '/',
+			link: '/work',
 			name: 'our work',
 			id: 'ourWork',
 			index: 2
@@ -26,13 +26,6 @@ export const navData = $state({
 			name: 'services',
 			id: 'services',
 			index: 3
-		},
-		{
-			title: 'our clients',
-			link: '/our-clients',
-			name: 'our clients',
-			id: 'ourClients',
-			index: 4
 		},
 		{
 			title: 'contact',
@@ -49,6 +42,6 @@ export const navData = $state({
  * @param index {number}
  */
 export function changeOpenMenuIndex(index) {
-	navData.openMenu = !navData.openMenu;
+	navData.isMenuOpen = !navData.isMenuOpen;
 	navData.activeIndex = index;
 }

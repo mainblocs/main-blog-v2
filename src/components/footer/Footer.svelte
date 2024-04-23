@@ -3,10 +3,11 @@
 	import Instagram from '$components/icons/instagram.svelte';
 	import Logo from '$components/icons/logo.svelte';
 	import Twitter from '$components/icons/twitter.svelte';
+	import Subscribe from '../subscribe.svelte';
 </script>
 
 <section class="bg-bgblack py-24">
-	<div class="wrapper">
+	<div class="wrapper p-4 scroll-px-4">
 		<div class="flex flex-col items-center md:flex-row md:justify-between text-white">
 			<div class="flex flex-col w-full md:w-2/3">
 				<div>
@@ -32,7 +33,8 @@
 				</div>
 
 			</div>
-			<div class="flex flex-col w-full md:w-1/3 gap-8 font-simple text-xl">
+			<div class="flex flex-col w-full md:w-1/3 gap-8 font-eb text-xl">
+				<Subscribe />
 				<div class="flex flex-col gap-1">
 					<span>hello@mainblocs.com</span>
 					<span>(123) 323-3232</span>

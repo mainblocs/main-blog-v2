@@ -1,4 +1,5 @@
 <script>
+	import Contact from '$src/components/Contact.svelte';
 	import Clients from '../components/Clients.svelte';
 	import Hero from '../components/Hero.svelte';
 	import Wedo from '../components/Wedo.svelte';
@@ -138,3 +139,4 @@
 <Hero />
 <Wedo />
 <Clients />
+<Contact />

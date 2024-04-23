@@ -4,7 +4,7 @@
 </script>
 
 <section class="bg-bgprimary text-white hero py-24 z-50">
-	<div class="wrapper">
+	<div class="wrapper px-4">
 		<div class="py-32">
 			<div class="flex flex-col gap-16 md:flex-row md:gap-8">
 				<div class="relative w-full md:w-2/3">

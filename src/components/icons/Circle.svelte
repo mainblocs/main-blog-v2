@@ -1,11 +1,9 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	height="1479.7"
 	preserveAspectRatio="xMidYMid meet"
 	version="1.0"
 	viewBox="0.0 0.0 1479.7 1479.7"
-	width="1479.7"
 	zoomAndPan="magnify">
 	<g id="change1_1">
 		<path

@@ -7,7 +7,7 @@
 </style>
 
 <section class="bg-grey py-16">
-	<div class="wrapper">
+	<div class="wrapper px-2">
 		<h2 class="text-4xl font-bold pb-24 font-yoga lg:text-5xl">Our Clients</h2>
 		<div class="flex flex-wrap gap-12 clientContainer justify-center items-center mx-auto">
 			<div
