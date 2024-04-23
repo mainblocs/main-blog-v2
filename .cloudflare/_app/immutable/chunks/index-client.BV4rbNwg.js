@@ -1,1 +1,0 @@
-import{c as o,u as r,a as i}from"./runtime.C8x5QdD1.js";function e(n){if(o===null)throw new Error("onMount can only be used during component initialisation.");o.r?r(()=>{const u=i(n);if(typeof u=="function")return u}):t(o).m.push(n)}function t(n){return n.u??(n.u={a:[],b:[],m:[]})}export{e as o};
