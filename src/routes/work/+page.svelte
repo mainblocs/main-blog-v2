@@ -157,37 +157,38 @@
           class="relative before:absolute after:absolute before:bg-neutral-950
           after:bg-neutral-950/10 before:left-0 before:top-0 before:h-px
           before:w-6 after:left-8 after:right-0 after:top-0 after:h-px"
-          style="transform: translateY(24px) translateZ(0px);" />
-        <ul
-          role="list"
-          class="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
-          {#each data?.projects as project}
-            <li class="group">
-              <div
-                class="overflow-hidden"
-                style="transform: translateY(24px) translateZ(0px);">
+          style="transform: translateY(24px) translateZ(0px);">
+          <ul
+            role="list"
+            class="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+            {#each data?.projects as project}
+              <li class="group">
                 <div
-                  class="pt-12 group-[&amp;:nth-child(-n+2)]:-mt-px
-                  sm:group-[&amp;:nth-child(3)]:-mt-px
-                  lg:group-[&amp;:nth-child(4)]:-mt-px relative before:absolute
-                  after:absolute before:bg-neutral-950 after:bg-neutral-950/10
-                  before:left-0 before:top-0 before:h-px before:w-6 after:left-8
-                  after:right-0 after:top-0 after:h-px">
-                  <img
-                    alt={project.client}
-                    loading="lazy"
-                    width="184"
-                    height="36"
-                    decoding="async"
-                    data-nimg="1"
-                    class="h-32 w-64 flex-none object-contain bg-slate-400 p-8"
-                    src={project.logo}
-                    style="color: transparent;" />
+                  class="overflow-hidden"
+                  style="transform: translateY(24px) translateZ(0px);">
+                  <div
+                    class="pt-12 group-[&amp;:nth-child(-n+2)]:-mt-px
+                    sm:group-[&amp;:nth-child(3)]:-mt-px
+                    lg:group-[&amp;:nth-child(4)]:-mt-px relative before:absolute
+                    after:absolute before:bg-neutral-950 after:bg-neutral-950/10
+                    before:left-0 before:top-0 before:h-px before:w-6 after:left-8
+                    after:right-0 after:top-0 after:h-px">
+                    <img
+                      alt={project.client}
+                      loading="lazy"
+                      width="184"
+                      height="36"
+                      decoding="async"
+                      data-nimg="1"
+                      class="h-32 w-64 flex-none object-contain bg-slate-400 p-8"
+                      src={project.logo}
+                      style="color: transparent;" />
+                  </div>
                 </div>
-              </div>
-            </li>
-          {/each}
-        </ul>
+              </li>
+            {/each}
+          </ul>
+        </div>  
       </div>
   </div>
 </div>
