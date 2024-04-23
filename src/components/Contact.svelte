@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-5xl px-6 lg:px-12 mt-24 sm:mt-32 lg:mt-40 mb-24" data-aos="fade-in">
+<div class="mx-auto max-w-5xl px-6 lg:px-12 mt-24 sm:mt-32 lg:mt-40 mb-24">
 	<div
 		class="md:rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-16 rounded-3xl"
 		style="opacity: 1; transform: none;">

@@ -9,7 +9,7 @@ let modelStore =$state({
  * @param message {string}
  * @param duration {number}
  */
-export function showModle(message, duration){
+export function showModal(message, duration){
         modelStore.show = true
         modelStore.message = message
         modelStore.duration = duration

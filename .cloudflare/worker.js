@@ -71,15 +71,15 @@ function push() {
   current_component = { p: current_component, c: null, d: null };
 }
 function pop() {
-  var component5 = (
+  var component6 = (
     /** @type {import('#server').Component} */
     current_component
   );
-  var ondestroy = component5.d;
+  var ondestroy = component6.d;
   if (ondestroy) {
     on_destroy.push(...ondestroy);
   }
-  current_component = component5.p;
+  current_component = component6.p;
 }
 function get_parent_context(component_context) {
   let parent = component_context.p;
@@ -95,7 +95,7 @@ function get_parent_context(component_context) {
 function create_payload() {
   return { out: "", head: { title: "", out: "", anchor: 0 }, anchor: 0 };
 }
-function render(component5, options2) {
+function render(component6, options2) {
   const payload = create_payload();
   const prev_on_destroy = on_destroy;
   on_destroy = [];
@@ -104,7 +104,7 @@ function render(component5, options2) {
     push();
     current_component.c = options2.context;
   }
-  component5(payload, options2.props, {}, {});
+  component6(payload, options2.props, {}, {});
   if (options2.context) {
     pop();
   }
@@ -166,6 +166,15 @@ function slot(payload, slot_fn, slot_props, fallback_fn) {
     }
   } else {
     slot_fn(payload, slot_props);
+  }
+}
+function bind_props(props_parent, props_now) {
+  for (const key2 in props_now) {
+    const initial_value = props_parent[key2];
+    const value = props_now[key2];
+    if (initial_value === void 0 && value !== void 0 && Object.getOwnPropertyDescriptor(props_parent, key2)?.set) {
+      props_parent[key2] = value;
+    }
   }
 }
 function ensure_array_like(array_like_or_iterator) {
@@ -396,13 +405,20 @@ var init_client = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/open.js
+// .svelte-kit/output/server/chunks/logo.js
 function Logo($$payload, $$props) {
   push();
   $$payload.out += `<div><svg viewBox="0 0 369.6666666666667 97.61485759736304" width="200px"><g id="SvgjsG1659" transform="matrix(1.190425978721935,0,0,1.190425978721935,-17.852877128588492,-11.904330174497602)" fill="#000000"><rect xmlns="http://www.w3.org/2000/svg" x="25.249" y="20.252" transform="matrix(0.7071 0.7071 -0.7071 0.7071 46.463 -22.1737)" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="49.499" height="49.497"></rect><path xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M49.999,69.395 l24.394-24.392L50,20.608L25.608,45.002L49.999,69.395z
 				M63.785,45.002L49.999,58.787L36.214,45.002L50,31.215L63.785,45.002z"></path><rect xmlns="http://www.w3.org/2000/svg" x="47.754" y="42.754" transform="matrix(-0.707 0.7072 -0.7072 -0.707 117.1804 41.4576)" fill="#000000" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.496" height="4.497"></rect><polygon xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 49.999,80 20,50.004 15.002,55 49.999,90 85,55 80,50 "></polygon></g></svg></div>`;
   pop();
 }
+var init_logo = __esm({
+  ".svelte-kit/output/server/chunks/logo.js"() {
+    init_chunks();
+  }
+});
+
+// .svelte-kit/output/server/chunks/open.js
 function Open($$payload, $$props) {
   push();
   $$payload.out += `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg>`;
@@ -421,9 +437,9 @@ __export(layout_svelte_exports, {
 });
 function Facebook($$payload, $$props) {
   push();
-  $$payload.out += `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0.0 0.0 237.4 237.4" zoomAndPan="magnify" style="fill: rgb(255, 255, 255);"><g id="__id349_s3f6kv6di"><path d="M130.1,83.1v19.3h24.3l-3.4,26.4h-20.9v60.5h-26.5v-60.5H80.9v-26.4h22.7V83.1c0-20.9,16.9-35,37.8-35c9.2,0,15,1.4,15,1.4
-			v22.3h-15C135.2,71.8,130.1,76.9,130.1,83.1z" style="fill: inherit;"></path><path d="M118.7,237.4C53.3,237.4,0,184.2,0,118.7S53.3,0,118.7,0c65.5,0,118.7,53.3,118.7,118.7S184.2,237.4,118.7,237.4z
-			M118.7,6.5C56.8,6.5,6.5,56.8,6.5,118.7s50.3,112.2,112.2,112.2c61.9,0,112.2-50.3,112.2-112.2S180.6,6.5,118.7,6.5z" style="fill: inherit;"></path></g></svg>`;
+  $$payload.out += `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0.0 0.0 237.4 237.4" zoomAndPan="magnify" style="fill: rgb(255, 255, 255);"><g><path d="M130.1,83.1v19.3h24.3l-3.4,26.4h-20.9v60.5h-26.5v-60.5H80.9v-26.4h22.7V83.1c0-20.9,16.9-35,37.8-35c9.2,0,15,1.4,15,1.4
+			v22.3h-15C135.2,71.8,130.1,76.9,130.1,83.1z"></path><path d="M118.7,237.4C53.3,237.4,0,184.2,0,118.7S53.3,0,118.7,0c65.5,0,118.7,53.3,118.7,118.7S184.2,237.4,118.7,237.4z
+			M118.7,6.5C56.8,6.5,6.5,56.8,6.5,118.7s50.3,112.2,112.2,112.2c61.9,0,112.2-50.3,112.2-112.2S180.6,6.5,118.7,6.5z"></path></g></svg>`;
   pop();
 }
 function Instagram($$payload, $$props) {
@@ -459,7 +475,7 @@ function Subscribe($$payload, $$props) {
     message: "thank you for subscribing. We will notify you on important updates.",
     errorMessage: "please enter valid email."
   };
-  $$payload.out += `<div class="max-w-sm pb-8"><h2 class="font-yoga text-sm font-semibold tracking-wider text-white">Sign up for our newsletter</h2> <p class="mt-4 text-sm text-gray-100 font-comsans">Subscribe to get the latest design news, articles, resources and inspiration.</p> <div class="relative mt-6"><input type="email" placeholder="Email address" autocomplete="email" aria-label="Email address"${attr("value", emailStore.value, false)} class="block w-full rounded-2xl border border-neutral-300 bg-white py-4 pl-6 pr-20 text-base/6 text-white ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"> <div class="absolute inset-y-1 right-1 flex justify-end"><button aria-label="Submit" class="flex aspect-square h-full items-center justify-center rounded-xl bg-black text-white transition hover:bg-neutral-800"><svg viewBox="0 0 16 6" aria-hidden="true" class="w-4 text-white"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M16 3 10 .5v2H0v1h10v2L16 3Z"></path></svg></button></div></div> <!--[-->`;
+  $$payload.out += `<div class="max-w-sm pb-8"><h2 class="font-yoga text-sm font-semibold tracking-wider text-white">Sign up for our newsletter</h2> <p class="mt-4 text-sm text-gray-100 font-comsans">Subscribe to get the latest design news, articles, resources and inspiration.</p> <div class="relative mt-6"><input type="email" placeholder="Email address" autocomplete="email" aria-label="Email address"${attr("value", emailStore.value, false)} class="block w-full rounded-2xl border border-neutral-300 bg-white py-4 pl-6 pr-20 text-base/6 text-white ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"> <div class="absolute inset-y-1 right-1 flex justify-end"><button aria-label="Submit" class="flex aspect-square h-full items-center justify-center rounded-xl bg-black text-white transition hover:bg-neutral-800 mr-2"><svg viewBox="0 0 16 6" aria-hidden="true" class="w-6 h-full text-white"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M16 3 10 .5v2H0v1h10v2L16 3Z"></path></svg></button></div></div> <!--[-->`;
   {
     $$payload.out += "<!--]!-->";
   }
@@ -472,11 +488,11 @@ function Footer($$payload, $$props) {
   Logo($$payload);
   $$payload.out += `<!--]--></div> <div class="flex flex-col gap-12 py-32"><div><h3 class="leading-[.9971em] tracking-[-0.01em] font-yoga text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold w-full md:max-w-[500px] text-wrap">Make your mark</h3></div> <div class="mt-8"><a href="/contact" class="font-yoga max-w-24"><h3 class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2 border-white p-4 md:p-6 lg:px-8 lg:py-5 xl:px-12 max-w-[350px] text-center">Work with us</h3></a></div></div></div> <div class="flex flex-col w-full md:w-1/3 gap-8 font-eb text-xl"><!--[-->`;
   Subscribe($$payload);
-  $$payload.out += `<!--]--> <div class="flex flex-col gap-1"><span>hello@mainblocs.com</span> <span>(123) 323-3232</span></div> <div class="flex flex-col gap-1"><span>123 Main St</span> <span>San Francisco, CA 94105</span></div> <div class="flex gap-4"><span class="w-8 h-8"><!--[-->`;
+  $$payload.out += `<!--]--> <div class="flex flex-col gap-1"><span>hello@mainblocs.com</span> <span>(123) 323-3232</span></div> <div class="flex flex-col gap-1"><span>123 Main St</span> <span>San Francisco, CA 94105</span></div> <div class="flex gap-3"><span class="w-12 h-12"><!--[-->`;
   Facebook($$payload);
-  $$payload.out += `<!--]--></span> <span class="w-8 h-8"><!--[-->`;
+  $$payload.out += `<!--]--></span> <span class="w-12 h-12"><!--[-->`;
   Twitter($$payload);
-  $$payload.out += `<!--]--></span> <span class="w-8 h-8"><!--[-->`;
+  $$payload.out += `<!--]--></span> <span class="w-12 h-12"><!--[-->`;
   Instagram($$payload);
   $$payload.out += `<!--]--></span></div></div></div></div></section>`;
   pop();
@@ -492,7 +508,7 @@ function WorksMenu($$payload, $$props) {
       activeIndex != 2 ? "fadeOut" : ""
     ].filter(Boolean).join(" "))}`,
     false
-  )}><div${attr(
+  )} data-aos="fade-in"><div${attr(
     "class",
     `image-container z-[100] w-[22%] h-[275px] min-w-[275px] max-h-[275px] svelte-m1qcxe ${stringify([
       ""
@@ -526,13 +542,13 @@ function WorksMenu($$payload, $$props) {
 function Header($$payload, $$props) {
   push();
   const each_array = ensure_array_like(navData.navItems);
-  $$payload.out += `<section class="bg-bgprimary font-[yoga] fixed top-0 left-0 w-full header z-[10000] px-4 pt-4 pb-2"><div class="wrapper"><nav class="flex items-center justify-between relative"><div class="w-[300px]"><a href="/" class="flex gap-2 items-center h-12 w-full" title="Home"><div class="w-[40px]"><!--[-->`;
+  $$payload.out += `<section class="bg-bgprimary font-[yoga] fixed top-0 left-0 w-full header z-[10000] px-4 pt-4 pb-2" data-aos="fade-in"><div class="wrapper"><nav class="flex items-center justify-between relative"><div class="w-[300px]"><a href="/" class="flex gap-2 items-center h-12 w-full" title="Home"><div class="w-[40px]"><!--[-->`;
   Logo($$payload);
   $$payload.out += `<!--]--></div> <span class="text-white ml-4">Mainblocs</span></a></div> <div class="hidden md:block w-[calc(100%-300px)]"><ul class="flex gap-6 text-xs justify-end items-center text-white tex-sm"><!--[-->`;
-  for (let index5 = 0; index5 < each_array.length; index5++) {
-    const item = each_array[index5];
+  for (let index6 = 0; index6 < each_array.length; index6++) {
+    const item = each_array[index6];
     $$payload.out += "<!--[-->";
-    $$payload.out += `<li class="navMenuLink"${attr("id", item.id, false)}><a class="navMenuLinkContent"${attr("href", item.link, false)}${attr("title", item.title, false)}${attr("id", item.id, false)}>${escape(item.title)}</a></li>`;
+    $$payload.out += `<li class="navMenuLink"><a class="navMenuLinkContent"${attr("href", item.link, false)}${attr("title", item.title, false)}>${escape(item.title)}</a></li>`;
     $$payload.out += "<!--]-->";
   }
   $$payload.out += "<!--]-->";
@@ -547,6 +563,8 @@ function Header($$payload, $$props) {
 }
 function _layout($$payload, $$props) {
   push();
+  const prerender = true;
+  const ssr = true;
   $$payload.out += `<div class="overflow-x-hidden"><!--[-->`;
   Header($$payload);
   $$payload.out += `<!--]--> <!--[-->`;
@@ -554,6 +572,7 @@ function _layout($$payload, $$props) {
   $$payload.out += `<!--]--> <!--[-->`;
   Footer($$payload);
   $$payload.out += `<!--]--></div>`;
+  bind_props($$props, { prerender, ssr });
   pop();
 }
 var navData;
@@ -561,6 +580,7 @@ var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/_layout.svelte.js"() {
     init_chunks();
     init_client();
+    init_logo();
     init_open();
     navData = {
       activeIndex: 0,
@@ -614,8 +634,8 @@ var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     index = 0;
     component = async () => component_cache ??= (await Promise.resolve().then(() => (init_layout_svelte(), layout_svelte_exports))).default;
-    imports = ["_app/immutable/nodes/0.BsjJ1DcU.js", "_app/immutable/chunks/disclose-version.Bs4Y-PDV.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/lifecycle.BeInBq4H.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/entry.ow2CJdrR.js", "_app/immutable/chunks/index-client.DFCM8VIC.js", "_app/immutable/chunks/proxy.D9fXiWc6.js", "_app/immutable/chunks/open.BPByRcNo.js", "_app/immutable/chunks/class.CWwZdcnh.js", "_app/immutable/chunks/if.DKwdLOlE.js", "_app/immutable/chunks/attributes.CbpVpun3.js", "_app/immutable/chunks/input.KjIirpw8.js", "_app/immutable/chunks/each.CDiL219c.js"];
-    stylesheets = ["_app/immutable/assets/0.CyY-nKEL.css"];
+    imports = ["_app/immutable/nodes/0.ba9A33GE.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/render.CR8dV1-2.js", "_app/immutable/chunks/open.DMfvnW-Y.js", "_app/immutable/chunks/lifecycle.DBI0busB.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/entry.QeZtfDwZ.js", "_app/immutable/chunks/index-client.DT8scQk1.js", "_app/immutable/chunks/proxy.B9TrOHuA.js", "_app/immutable/chunks/logo.Bo_vi5yG.js", "_app/immutable/chunks/class.CAljAydP.js", "_app/immutable/chunks/if.Rq_8K8pM.js", "_app/immutable/chunks/attributes.DFpEsyqO.js", "_app/immutable/chunks/modalstore.svelte.B0ZaCesU.js", "_app/immutable/chunks/each.COBTARdN.js"];
+    stylesheets = ["_app/immutable/assets/0.Cqfc6Qdz.css"];
     fonts = [];
   }
 });
@@ -676,74 +696,13 @@ var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     index2 = 1;
     component2 = async () => component_cache2 ??= (await Promise.resolve().then(() => (init_error_svelte(), error_svelte_exports))).default;
-    imports2 = ["_app/immutable/nodes/1.D3Hy7jiz.js", "_app/immutable/chunks/disclose-version.Bs4Y-PDV.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/lifecycle.BeInBq4H.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/entry.ow2CJdrR.js", "_app/immutable/chunks/index-client.DFCM8VIC.js"];
+    imports2 = ["_app/immutable/nodes/1.S23uUVfx.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/render.CR8dV1-2.js", "_app/immutable/chunks/lifecycle.DBI0busB.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/entry.QeZtfDwZ.js", "_app/immutable/chunks/index-client.DT8scQk1.js"];
     stylesheets2 = [];
     fonts2 = [];
   }
 });
 
-// .svelte-kit/output/server/entries/pages/_page.svelte.js
-var page_svelte_exports = {};
-__export(page_svelte_exports, {
-  default: () => _page
-});
-function Contact($$payload, $$props) {
-  push();
-  $$payload.out += `<div class="mx-auto max-w-5xl px-6 lg:px-12 mt-24 sm:mt-32 lg:mt-40 mb-24" data-aos="fade-in"><div class="md:rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-16 rounded-3xl" style="opacity: 1; transform: none;"><div class="mx-auto max-w-4xl"><div class="max-w-xl"><h2 class="font-yoga text-3xl font-medium text-white [text-wrap:balance] sm:text-4xl">Tell us about your project</h2> <div class="mt-12 flex"><a class="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-white text-neutral-950 hover:bg-neutral-200" href="/contact"><span class="relative py-2 px-8">Say Hi</span></a></div> <div class="mt-10 border-t border-white/10 pt-10"><h3 class="font-display text-base font-semibold text-white">Our offices</h3> <ul role="list" class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"><li><address class="text-sm not-italic text-neutral-300"><strong class="text-white">Los Angeles</strong> <br> Santa Monica Blvd <br> California, USA</address></li></ul></div></div></div></div></div>`;
-  pop();
-}
-function Clients($$payload, $$props) {
-  push();
-  $$payload.out += `<section class="bg-grey py-16"><div class="wrapper px-2"><h2 class="text-4xl font-bold pb-24 font-yoga lg:text-5xl">Our Clients</h2> <div class="flex flex-wrap gap-12 clientContainer justify-center items-center mx-auto"><div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/phases.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/chapter.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/crowd.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/curaaid.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/memento.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/schematiq.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/spring.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/wilderness.png" alt="Phases"></div></div></div></section>`;
-  pop();
-}
-function WorksHero($$payload, $$props) {
-  push();
-  $$payload.out += `<div class="flex flex-col justify-center items-center md:flex-row flex-wrap gap-6 mt-24"><div${attr(
-    "class",
-    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
-      ""
-    ].filter(Boolean).join(" "))}`,
-    false
-  )}><img class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"> <div class="hover-image flex flex-col gap-4 svelte-16x40xd"><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/chicago.webp" loading="lazy"> <div class="w-full bg-gray-200 absolute bottom-0 right-0 p-4"><a href="#" class="text-black w-full bg-gray-200 flex gap-3 items-center"><span class="text-nowrap">View Casestudy</span> <!--[-->`;
-  Open($$payload);
-  $$payload.out += `<!--]--></a></div></div></div> <div${attr(
-    "class",
-    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
-      ""
-    ].filter(Boolean).join(" "))}`,
-    false
-  )}><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/chicago.webp" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div> <div${attr(
-    "class",
-    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
-      ""
-    ].filter(Boolean).join(" "))}`,
-    false
-  )}><img src="/indie.webp" class="w-full h-full object-cover rounded-lg svelte-16x40xd" alt="Macbook Mockup on White Table" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div> <div${attr(
-    "class",
-    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
-      ""
-    ].filter(Boolean).join(" "))}`,
-    false
-  )}><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/superstore.webp" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div></div>`;
-  pop();
-}
-function Arrow($$payload, $$props) {
-  push();
-  $$payload.out += `<svg class="rotate-90 w-full h-full font-bold" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="474.1" preserveAspectRatio="xMidYMid meet" version="1" viewBox="0.0 0.0 143.9 474.1" width="143.9" zoomAndPan="magnify"><g id="change1_1"><path d="M143.9004,66.6838v8.2128c-14.3914,0-47.0732-5.4281-67.8438-50.7603v449.9972h-8.2128V24.1356
-			C47.0717,69.4685,14.3899,74.8966,0,74.8966v-8.2128c14.5849,0,50.4076-6.4974,68.0082-66.6838h7.884
-			C93.4907,60.1864,129.3154,66.6838,143.9004,66.6838z"></path></g></svg>`;
-  pop();
-}
-function Hero($$payload, $$props) {
-  push();
-  $$payload.out += `<section class="bg-bgprimary text-white hero py-24 z-50"><div class="wrapper px-4"><div class="py-32"><div class="flex flex-col gap-16 md:flex-row md:gap-8"><div class="relative w-full md:w-2/3"><h3 class="leading-[.9971em] tracking-[-0.01em] font-[yoga] text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold w-full md:max-w-[400px] text-wrap">Design the \u200Bfuture</h3> <div class="hidden md:block"><div class="absolute top-0 z-50 right-[70px] w-[20%] h-[100px] font-bold"><div class="animation_container w-full h-full"><div class="w-[250px] h-[100px] overflow-hidden relative"><!--[-->`;
-  Arrow($$payload);
-  $$payload.out += `<!--]--></div></div></div></div></div> <div class="w-2/3 md:w-1/3"><button class="font-[yoga]"><h3 class="text-md md:text-2xl font-bold rounded-full border-spacing-1 border-2 border-white p-4 md:p-6 lg:py-8 lg:px-8 xl:py-8 xl:px-12">Work with us</h3></button></div></div> <!--[-->`;
-  WorksHero($$payload);
-  $$payload.out += `<!--]--></div></div></section>`;
-  pop();
-}
+// .svelte-kit/output/server/chunks/Wedo.js
 function Circle($$payload, $$props) {
   push();
   $$payload.out += `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0.0 0.0 1479.7 1479.7" zoomAndPan="magnify"><g id="change1_1"><path d="M1441.7275391,323.0449219c-26.0556641-64.2524414-64.3349609-121.8999023-113.7773438-171.3413086
@@ -851,16 +810,86 @@ function Circle($$payload, $$props) {
 }
 function Wedo($$payload, $$props) {
   push();
-  $$payload.out += `<section class="bg-white"><div class="wrapper py-12 md:py-32 flex flex-col gap-12 px-4"><div class="flex justify-center flex-col items-center w-full"><!--[-->`;
+  $$payload.out += `<section class="bg-white" id="services"><div class="wrapper py-12 md:py-32 flex flex-col gap-12 px-4"><div class="flex justify-center flex-col items-center w-full"><!--[-->`;
   Logo($$payload);
   $$payload.out += `<!--]--></div> <div class="flex flex-col md:flex-row items-center justify-between"><div class="flex flex-col gap-8"><h3 class="font-yoga text-3xl md:text-6xl">What we do?</h3> <p class="font-comsans text-xl">Elevate your brand and make your mark in history</p></div> <div class="w-1/2"><div class="w-48 ml-32 h-52 md:ml-52 mt-4 md:mt-0"><!--[-->`;
   Circle($$payload);
-  $$payload.out += `<!--]--></div></div></div> <div><h3 class="text-2xl md:text-5xl font-yoga text-red-500 max-w-[600px] text-wrap py-4 md:py-12 md:leading-[60px]">We design, develope, and promote shopify stores.</h3></div> <div class="flex flex-wrap justify-center lg:justify-between gap-8"><div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand Identity \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand Activation \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Website Development \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand strategy \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Video Production \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Integrated Marketing \u2192</span></div></div> <div class="bg-[#43302A] md:mt-8 py-24 flex flex-col md:flex-row gap-2 items-center"><div class="w-full md:w-1/2"><span class="w-2/3 block max-w-[500px] border-t-2 border-white border-spacing-3 px-4 md:px-16"></span> <h3 class="w-full font-yoga text-2xl md:text-3xl pt-5 max-w-[800px] text-gray-200 px-4 md:px-16">Design meets technology at MainBlocs , where our experienced team helps you create a
+  $$payload.out += `<!--]--></div></div></div> <div><h3 class="text-2xl md:text-5xl font-yoga text-[#ff6c89] max-w-[600px] text-wrap py-4 md:py-12 md:leading-[60px]">We design, develope, and promote shopify stores.</h3></div> <div class="flex flex-wrap justify-center lg:justify-between gap-8"><div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand Identity \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand Activation \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Website Development \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Brand strategy \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Video Production \u2192</span></div> <div class="w-full sm:w-[45%] md:w-[31%]"><span class="px-12 py-5 border-gray-700 border-[1px] rounded-full text-center block">Integrated Marketing \u2192</span></div></div> <div class="bg-[#43302A] md:mt-8 py-24 flex flex-col md:flex-row gap-2 items-center"><div class="w-full md:w-1/2"><span class="w-2/3 block max-w-[500px] border-t-2 border-white border-spacing-3 px-4 md:px-16"></span> <h3 class="w-full font-yoga text-2xl md:text-3xl pt-5 max-w-[800px] text-gray-200 px-4 md:px-16">Design meets technology at MainBlocs , where our experienced team helps you create a
 					successful Shopify ecommerce store</h3></div> <div class="w-full md:w-1/2 p-4"><img src="s2.webp" alt="Shopify" class="w-full md:w-[80%] aspect-square object-cover object-center rounded-xl"></div></div></div></section>`;
+  pop();
+}
+var init_Wedo = __esm({
+  ".svelte-kit/output/server/chunks/Wedo.js"() {
+    init_chunks();
+    init_logo();
+  }
+});
+
+// .svelte-kit/output/server/entries/pages/_page.svelte.js
+var page_svelte_exports = {};
+__export(page_svelte_exports, {
+  default: () => _page
+});
+function Contact($$payload, $$props) {
+  push();
+  $$payload.out += `<div class="mx-auto max-w-5xl px-6 lg:px-12 mt-24 sm:mt-32 lg:mt-40 mb-24"><div class="md:rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-16 rounded-3xl" style="opacity: 1; transform: none;"><div class="mx-auto max-w-4xl"><div class="max-w-xl"><h2 class="font-yoga text-3xl font-medium text-white [text-wrap:balance] sm:text-4xl">Tell us about your project</h2> <div class="mt-12 flex"><a class="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-white text-neutral-950 hover:bg-neutral-200" href="/contact"><span class="relative py-2 px-8">Say Hi</span></a></div> <div class="mt-10 border-t border-white/10 pt-10"><h3 class="font-display text-base font-semibold text-white">Our offices</h3> <ul role="list" class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"><li><address class="text-sm not-italic text-neutral-300"><strong class="text-white">Los Angeles</strong> <br> Santa Monica Blvd <br> California, USA</address></li></ul></div></div></div></div></div>`;
+  pop();
+}
+function Clients($$payload, $$props) {
+  push();
+  $$payload.out += `<section class="bg-grey py-16"><div class="wrapper px-2"><h2 class="text-4xl font-bold pb-24 font-yoga lg:text-5xl">Our Clients</h2> <div class="flex flex-wrap gap-12 clientContainer justify-center items-center mx-auto"><div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/phases.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/chapter.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/crowd.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/curaaid.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/memento.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/schematiq.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/spring.png" alt="Phases"></div> <div class="flex flex-col justify-center items-center w-full sm:w-2/3 h-[150px] md:h-auto md:w-[275px]"><img src="/wilderness.png" alt="Phases"></div></div></div></section>`;
+  pop();
+}
+function WorksHero($$payload, $$props) {
+  push();
+  $$payload.out += `<div class="flex flex-col justify-center items-center md:flex-row flex-wrap gap-6 mt-24"><div${attr(
+    "class",
+    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
+      ""
+    ].filter(Boolean).join(" "))}`,
+    false
+  )}><img class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"> <div class="hover-image flex flex-col gap-4 svelte-16x40xd"><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/chicago.webp" loading="lazy"> <div class="w-full bg-gray-200 absolute bottom-0 right-0 p-4"><a href="#" class="text-black w-full bg-gray-200 flex gap-3 items-center"><span class="text-nowrap">View Casestudy</span> <!--[-->`;
+  Open($$payload);
+  $$payload.out += `<!--]--></a></div></div></div> <div${attr(
+    "class",
+    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
+      ""
+    ].filter(Boolean).join(" "))}`,
+    false
+  )}><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/chicago.webp" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div> <div${attr(
+    "class",
+    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
+      ""
+    ].filter(Boolean).join(" "))}`,
+    false
+  )}><img src="/indie.webp" class="w-full h-full object-cover rounded-lg svelte-16x40xd" alt="Macbook Mockup on White Table" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div> <div${attr(
+    "class",
+    `image-container z-[100] w-[22%] h-[300px] min-w-[300px] max-h-[300px] svelte-16x40xd ${stringify([
+      ""
+    ].filter(Boolean).join(" "))}`,
+    false
+  )}><img alt="Lamp on White Background" class="w-full h-full object-cover rounded-lg svelte-16x40xd" src="/superstore.webp" loading="lazy"> <img class="w-full h-full object-cover rounded-lg hover-image svelte-16x40xd" src="/head.webp" alt="Lamp on White Background" loading="lazy"></div></div>`;
+  pop();
+}
+function Arrow($$payload, $$props) {
+  push();
+  $$payload.out += `<svg class="rotate-90 w-full h-full font-bold" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="474.1" preserveAspectRatio="xMidYMid meet" version="1" viewBox="0.0 0.0 143.9 474.1" width="143.9" zoomAndPan="magnify"><g id="change1_1"><path d="M143.9004,66.6838v8.2128c-14.3914,0-47.0732-5.4281-67.8438-50.7603v449.9972h-8.2128V24.1356
+			C47.0717,69.4685,14.3899,74.8966,0,74.8966v-8.2128c14.5849,0,50.4076-6.4974,68.0082-66.6838h7.884
+			C93.4907,60.1864,129.3154,66.6838,143.9004,66.6838z"></path></g></svg>`;
+  pop();
+}
+function Hero($$payload, $$props) {
+  push();
+  $$payload.out += `<section class="bg-bgprimary text-white hero py-12 sm:py-24 z-50 section min-h-screen"><div class="wrapper px-4"><div class="py-32"><div class="flex flex-col gap-16 md:flex-row md:gap-8"><div class="relative w-full md:w-2/3 homepage__intro svelte-fpk36c"><h3 class="leading-[.9971em] tracking-[-0.01em] font-[yoga] text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold w-full md:max-w-[400px] text-wrap scrolling-title title-huge title-houses svelte-fpk36c">Design the \u200Bfuture</h3> <div class="hidden md:block"><div class="absolute top-0 z-50 right-[70px] w-[20%] h-[100px] font-bold"><div class="animation_container w-full h-full"><div class="w-[250px] h-[100px] overflow-hidden relative"><!--[-->`;
+  Arrow($$payload);
+  $$payload.out += `<!--]--></div></div></div></div></div> <div class="w-2/3 md:w-1/3"><button class="font-[yoga]"><h3 class="text-md md:text-2xl font-bold rounded-full border-spacing-1 border-2 border-white p-4 md:p-6 lg:py-8 lg:px-8 xl:py-8 xl:px-12">Work with us</h3></button></div></div> <!--[-->`;
+  WorksHero($$payload);
+  $$payload.out += `<!--]--></div></div></section>`;
   pop();
 }
 function _page($$payload, $$props) {
   push();
+  const prerender = true;
   $$payload.out += `<!--[-->`;
   Hero($$payload);
   $$payload.out += `<!--]--> <!--[-->`;
@@ -870,12 +899,14 @@ function _page($$payload, $$props) {
   $$payload.out += `<!--]--> <!--[-->`;
   Contact($$payload);
   $$payload.out += `<!--]-->`;
+  bind_props($$props, { prerender });
   pop();
 }
 var init_page_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/_page.svelte.js"() {
     init_chunks();
     init_open();
+    init_Wedo();
   }
 });
 
@@ -893,8 +924,8 @@ var init__3 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     index3 = 2;
     component3 = async () => component_cache3 ??= (await Promise.resolve().then(() => (init_page_svelte(), page_svelte_exports))).default;
-    imports3 = ["_app/immutable/nodes/2.a0Gpr5n5.js", "_app/immutable/chunks/disclose-version.Bs4Y-PDV.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/lifecycle.BeInBq4H.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/class.CWwZdcnh.js", "_app/immutable/chunks/proxy.D9fXiWc6.js", "_app/immutable/chunks/open.BPByRcNo.js"];
-    stylesheets3 = ["_app/immutable/assets/2.7cTFvTpv.css"];
+    imports3 = ["_app/immutable/nodes/2.0szyO9U0.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/open.DMfvnW-Y.js", "_app/immutable/chunks/lifecycle.DBI0busB.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/render.CR8dV1-2.js", "_app/immutable/chunks/class.CAljAydP.js", "_app/immutable/chunks/proxy.B9TrOHuA.js", "_app/immutable/chunks/Wedo.CPJgUIK-.js", "_app/immutable/chunks/logo.Bo_vi5yG.js"];
+    stylesheets3 = ["_app/immutable/assets/2.CMvT-Nh1.css"];
     fonts3 = [];
   }
 });
@@ -962,7 +993,7 @@ function _page2($$payload, $$props) {
   {
     $$payload.out += "<!--]!-->";
   }
-  $$payload.out += `</div> <button class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2 border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"><h3 class="relative py-2 px-8">Let\u2019s work together</h3></button></form></div> <div class="max-w-[500px] font-comsans"><h2 class="text-base font-semibold mt-8">Our offices</h2> <p class="mt-6 text-base">Prefer doing things in person? We don\u2019t but we have to list our
+  $$payload.out += `</div> <button class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2 border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"><span class="relative py-2 px-8">Let\u2019s work together</span></button></form></div> <div class="max-w-[500px] font-comsans"><h2 class="text-base font-semibold mt-8">Our offices</h2> <p class="mt-6 text-base">Prefer doing things in person? We don\u2019t but we have to list our
           addresses here for legal reasons.</p> <ul role="list" class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2"><li><address class="text-sm not-italic"><strong>Los Angeles</strong> <br> Santa Monica Blvd <br> California, USA</address></li></ul> <div class="mt-16 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px"><h2 class="text-base font-semibold">Email us</h2> <dl class="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2"><div><dt class="font-semibold">Careers</dt> <dd><a class="hover:" href="mailto:careers@mainblocs.com">careers@mainblocs.com</a></dd></div> <div><dt class="font-semibold">Contact</dt> <dd><a class="hover:" href="mailto:support@mainblocs.com">support@mainblocs.com</a></dd></div></dl></div></div></div></div></div></section>`;
   pop();
 }
@@ -987,9 +1018,48 @@ var init__4 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     index4 = 3;
     component4 = async () => component_cache4 ??= (await Promise.resolve().then(() => (init_page_svelte2(), page_svelte_exports2))).default;
-    imports4 = ["_app/immutable/nodes/3.vv7ifppc.js", "_app/immutable/chunks/disclose-version.Bs4Y-PDV.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/if.DKwdLOlE.js", "_app/immutable/chunks/attributes.CbpVpun3.js", "_app/immutable/chunks/class.CWwZdcnh.js", "_app/immutable/chunks/input.KjIirpw8.js", "_app/immutable/chunks/proxy.D9fXiWc6.js", "_app/immutable/chunks/entry.ow2CJdrR.js", "_app/immutable/chunks/index-client.DFCM8VIC.js", "_app/immutable/chunks/utils.BSJX-nVd.js"];
+    imports4 = ["_app/immutable/nodes/3.Cy53ZyuY.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/render.CR8dV1-2.js", "_app/immutable/chunks/if.Rq_8K8pM.js", "_app/immutable/chunks/attributes.DFpEsyqO.js", "_app/immutable/chunks/class.CAljAydP.js", "_app/immutable/chunks/modalstore.svelte.B0ZaCesU.js", "_app/immutable/chunks/proxy.B9TrOHuA.js", "_app/immutable/chunks/entry.QeZtfDwZ.js", "_app/immutable/chunks/index-client.DT8scQk1.js", "_app/immutable/chunks/utils.BSJX-nVd.js"];
     stylesheets4 = [];
     fonts4 = [];
+  }
+});
+
+// .svelte-kit/output/server/entries/pages/services/_page.svelte.js
+var page_svelte_exports3 = {};
+__export(page_svelte_exports3, {
+  default: () => _page3
+});
+function _page3($$payload, $$props) {
+  push();
+  $$payload.out += `<!--[-->`;
+  Wedo($$payload);
+  $$payload.out += `<!--]-->`;
+  pop();
+}
+var init_page_svelte3 = __esm({
+  ".svelte-kit/output/server/entries/pages/services/_page.svelte.js"() {
+    init_chunks();
+    init_Wedo();
+  }
+});
+
+// .svelte-kit/output/server/nodes/4.js
+var __exports5 = {};
+__export(__exports5, {
+  component: () => component5,
+  fonts: () => fonts5,
+  imports: () => imports5,
+  index: () => index5,
+  stylesheets: () => stylesheets5
+});
+var index5, component_cache5, component5, imports5, stylesheets5, fonts5;
+var init__5 = __esm({
+  ".svelte-kit/output/server/nodes/4.js"() {
+    index5 = 4;
+    component5 = async () => component_cache5 ??= (await Promise.resolve().then(() => (init_page_svelte3(), page_svelte_exports3))).default;
+    imports5 = ["_app/immutable/nodes/4.BowLHaFA.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/lifecycle.DBI0busB.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/chunks/Wedo.CPJgUIK-.js", "_app/immutable/chunks/logo.Bo_vi5yG.js", "_app/immutable/chunks/class.CAljAydP.js"];
+    stylesheets5 = [];
+    fonts5 = [];
   }
 });
 
@@ -1729,12 +1799,12 @@ function remove_reaction(signal, dependency) {
   let reactions_length = 0;
   if (reactions !== null) {
     reactions_length = reactions.length - 1;
-    const index5 = reactions.indexOf(signal);
-    if (index5 !== -1) {
+    const index6 = reactions.indexOf(signal);
+    if (index6 !== -1) {
       if (reactions_length === 0) {
         dependency.reactions = null;
       } else {
-        reactions[index5] = reactions[reactions_length];
+        reactions[index6] = reactions[reactions_length];
         reactions.pop();
       }
     }
@@ -2066,11 +2136,11 @@ function push2(props, runes = false, fn) {
     u: null
   };
 }
-function pop2(component5) {
+function pop2(component6) {
   const context_stack_item = current_component_context;
   if (context_stack_item !== null) {
-    if (component5 !== void 0) {
-      context_stack_item.x = component5;
+    if (component6 !== void 0) {
+      context_stack_item.x = component6;
     }
     const effects = context_stack_item.e;
     if (effects !== null) {
@@ -2082,7 +2152,7 @@ function pop2(component5) {
     current_component_context = context_stack_item.p;
     context_stack_item.m = true;
   }
-  return component5 || /** @type {T} */
+  return component6 || /** @type {T} */
   {};
 }
 function proxy(value, immutable2 = true, owners) {
@@ -2368,11 +2438,11 @@ function handle_event_propagation(handler_element, event) {
 }
 var all_registered_events = /* @__PURE__ */ new Set();
 var root_event_handles = /* @__PURE__ */ new Set();
-function mount(component5, options2) {
+function mount(component6, options2) {
   const anchor = options2.anchor ?? options2.target.appendChild(empty());
-  return flush_sync(() => _mount(component5, { ...options2, anchor }), false);
+  return flush_sync(() => _mount(component6, { ...options2, anchor }), false);
 }
-function hydrate(component5, options2) {
+function hydrate(component6, options2) {
   const target = options2.target;
   let hydrated = false;
   try {
@@ -2387,7 +2457,7 @@ function hydrate(component5, options2) {
         throw new Error("Missing hydration marker");
       }
       const anchor = hydrate_anchor(node);
-      const instance = _mount(component5, { ...options2, anchor });
+      const instance = _mount(component6, { ...options2, anchor });
       set_hydrating(false);
       hydrated = true;
       return instance;
@@ -2399,7 +2469,7 @@ function hydrate(component5, options2) {
         error
       );
       clear_text_content(target);
-      return mount(component5, options2);
+      return mount(component6, options2);
     } else {
       throw error;
     }
@@ -2438,7 +2508,7 @@ function _mount(Component, { target, anchor, props = (
   };
   event_handle(array_from(all_registered_events));
   root_event_handles.add(event_handle);
-  let component5 = void 0;
+  let component6 = void 0;
   const unmount2 = effect_root(() => {
     branch(() => {
       if (context) {
@@ -2452,7 +2522,7 @@ function _mount(Component, { target, anchor, props = (
       if (events) {
         props.$$events = events;
       }
-      component5 = Component(anchor, props) || {};
+      component6 = Component(anchor, props) || {};
       if (context) {
         pop2();
       }
@@ -2464,20 +2534,20 @@ function _mount(Component, { target, anchor, props = (
       root_event_handles.delete(event_handle);
     };
   });
-  mounted_components.set(component5, unmount2);
-  return component5;
+  mounted_components.set(component6, unmount2);
+  return component6;
 }
 var mounted_components = /* @__PURE__ */ new WeakMap();
-function unmount(component5) {
-  const fn = mounted_components.get(component5);
+function unmount(component6) {
+  const fn = mounted_components.get(component6);
   fn?.();
 }
-function asClassComponent$1(component5) {
+function asClassComponent$1(component6) {
   return class extends Svelte4Component {
     /** @param {any} options */
     constructor(options2) {
       super({
-        component: component5,
+        component: component6,
         ...options2
       });
     }
@@ -2552,10 +2622,10 @@ var Svelte4Component = class {
     this.#instance.$destroy();
   }
 };
-function asClassComponent(component5) {
-  const component_constructor = asClassComponent$1(component5);
+function asClassComponent(component6) {
+  const component_constructor = asClassComponent$1(component6);
   const _render = (props, { context } = {}) => {
-    const result = render(component5, { props, context });
+    const result = render(component6, { props, context });
     return {
       css: { code: "", map: null },
       head: result.head,
@@ -2623,7 +2693,24 @@ var options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body: body2, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body2 + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body: body2, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en"\n	  class="js-focus-visible lenis lenis-smooth">\n\n<head>\n	<meta charset="utf-8" />\n	<link rel="icon"\n		  href="' + assets2 + '/favicon.png" />\n	<meta name="viewport"\n		  content="width=device-width, initial-scale=1" />\n	' + head + '\n</head>\n\n<body data-sveltekit-preload-data="hover">\n	<div style="display: contents">' + body2 + `</div>
+	<script>
+		window.CSS.registerProperty({
+			name: "--motion-rotate",
+			inherits: false,
+			syntax: "<angle>",
+			initialValue: '0deg'
+		});
+		window.CSS.registerProperty({
+			name: "--motion-translateY",
+			inherits: false,
+			syntax: "<length-percentage>",
+			initialValue: '0px',
+		});
+	<\/script>
+</body>
+
+</html>`,
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -2695,7 +2782,7 @@ var options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1nnrtww"
+  version_hash: "7g67mj"
 };
 async function get_hooks() {
   return {};
@@ -3433,9 +3520,9 @@ function stringify2(value, reducers) {
     stringified[index22] = str;
     return index22;
   }
-  const index5 = flatten(value);
-  if (index5 < 0)
-    return `${index5}`;
+  const index6 = flatten(value);
+  if (index6 < 0)
+    return `${index6}`;
   return `[${stringified.join(",")}]`;
 }
 function stringify_primitive(thing) {
@@ -4476,8 +4563,8 @@ async function render_response({
   }
   const { client } = manifest2._;
   const modulepreloads = new Set(client.imports);
-  const stylesheets5 = new Set(client.stylesheets);
-  const fonts5 = new Set(client.fonts);
+  const stylesheets6 = new Set(client.stylesheets);
+  const fonts6 = new Set(client.fonts);
   const link_header_preloads = /* @__PURE__ */ new Set();
   const inline_styles = /* @__PURE__ */ new Map();
   let rendered;
@@ -4533,9 +4620,9 @@ async function render_response({
       for (const url of node.imports)
         modulepreloads.add(url);
       for (const url of node.stylesheets)
-        stylesheets5.add(url);
+        stylesheets6.add(url);
       for (const url of node.fonts)
-        fonts5.add(url);
+        fonts6.add(url);
       if (node.inline_styles) {
         Object.entries(await node.inline_styles()).forEach(([k, v]) => inline_styles.set(k, v));
       }
@@ -4563,7 +4650,7 @@ async function render_response({
     head += `
 	<style${attributes.join("")}>${content}</style>`;
   }
-  for (const dep of stylesheets5) {
+  for (const dep of stylesheets6) {
     const path = prefixed(dep);
     const attributes = ['rel="stylesheet"'];
     if (inline_styles.has(dep)) {
@@ -4577,7 +4664,7 @@ async function render_response({
     head += `
 		<link href="${path}" ${attributes.join(" ")}>`;
   }
-  for (const dep of fonts5) {
+  for (const dep of fonts6) {
     const path = prefixed(dep);
     if (resolve_opts.preload({ type: "font", path })) {
       const ext = dep.slice(dep.lastIndexOf(".") + 1);
@@ -5314,11 +5401,11 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
           const error = await handle_error_and_jsonify(event, options2, err);
           while (i--) {
             if (page2.errors[i]) {
-              const index5 = (
+              const index6 = (
                 /** @type {number} */
                 page2.errors[i]
               );
-              const node2 = await manifest2._.nodes[index5]();
+              const node2 = await manifest2._.nodes[index6]();
               let j = i;
               while (!branch2[j])
                 j -= 1;
@@ -5441,20 +5528,20 @@ function parse$1(str, options2) {
   var obj = {};
   var opt = options2 || {};
   var dec = opt.decode || decode;
-  var index5 = 0;
-  while (index5 < str.length) {
-    var eqIdx = str.indexOf("=", index5);
+  var index6 = 0;
+  while (index6 < str.length) {
+    var eqIdx = str.indexOf("=", index6);
     if (eqIdx === -1) {
       break;
     }
-    var endIdx = str.indexOf(";", index5);
+    var endIdx = str.indexOf(";", index6);
     if (endIdx === -1) {
       endIdx = str.length;
     } else if (endIdx < eqIdx) {
-      index5 = str.lastIndexOf(";", eqIdx - 1) + 1;
+      index6 = str.lastIndexOf(";", eqIdx - 1) + 1;
       continue;
     }
-    var key2 = str.slice(index5, eqIdx).trim();
+    var key2 = str.slice(index6, eqIdx).trim();
     if (void 0 === obj[key2]) {
       var val = str.slice(eqIdx + 1, endIdx).trim();
       if (val.charCodeAt(0) === 34) {
@@ -5462,7 +5549,7 @@ function parse$1(str, options2) {
       }
       obj[key2] = tryDecode(val, dec);
     }
-    index5 = endIdx + 1;
+    index6 = endIdx + 1;
   }
   return obj;
 }
@@ -6461,12 +6548,13 @@ var manifest = (() => {
     assets: /* @__PURE__ */ new Set(["aroma88-logo.avif", "aroma88.avif", "asana-hero.png", "asana-logo.png", "bg-video.mp4", "chapter.png", "chicago.webp", "crowd.png", "curaaid.png", "favicon.png", "flamejars.svg", "head.webp", "indie.webp", "madsen-hero.png", "madsen-logo.avif", "memento.png", "menu.svg", "phases.png", "s2.webp", "sarah-hero.png", "sarah.avif", "schematiq.png", "spring.png", "superstore.webp", "universe.mp4", "wallhaven-top.png", "wallhaven.png", "wilderness.png"]),
     mimeTypes: { ".avif": "image/avif", ".png": "image/png", ".mp4": "video/mp4", ".webp": "image/webp", ".svg": "image/svg+xml" },
     _: {
-      client: { "start": "_app/immutable/entry/start.DbJkyNzP.js", "app": "_app/immutable/entry/app.CuF48vZj.js", "imports": ["_app/immutable/entry/start.DbJkyNzP.js", "_app/immutable/chunks/entry.ow2CJdrR.js", "_app/immutable/chunks/index-client.DFCM8VIC.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/entry/app.CuF48vZj.js", "_app/immutable/chunks/proxy.D9fXiWc6.js", "_app/immutable/chunks/runtime.BCQlBliF.js", "_app/immutable/chunks/disclose-version.Bs4Y-PDV.js", "_app/immutable/chunks/if.DKwdLOlE.js", "_app/immutable/chunks/index-client.DFCM8VIC.js"], "stylesheets": [], "fonts": [], "uses_env_dynamic_public": false },
+      client: { "start": "_app/immutable/entry/start.DdY37y1v.js", "app": "_app/immutable/entry/app.BXLxICxS.js", "imports": ["_app/immutable/entry/start.DdY37y1v.js", "_app/immutable/chunks/entry.QeZtfDwZ.js", "_app/immutable/chunks/index-client.DT8scQk1.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/utils.BSJX-nVd.js", "_app/immutable/entry/app.BXLxICxS.js", "_app/immutable/chunks/proxy.B9TrOHuA.js", "_app/immutable/chunks/runtime.KHPTfT0h.js", "_app/immutable/chunks/render.CR8dV1-2.js", "_app/immutable/chunks/disclose-version.BD2IXOaX.js", "_app/immutable/chunks/if.Rq_8K8pM.js", "_app/immutable/chunks/index-client.DT8scQk1.js"], "stylesheets": [], "fonts": [], "uses_env_dynamic_public": false },
       nodes: [
         __memo(() => Promise.resolve().then(() => (init__(), __exports))),
         __memo(() => Promise.resolve().then(() => (init__2(), __exports2))),
         __memo(() => Promise.resolve().then(() => (init__3(), __exports3))),
-        __memo(() => Promise.resolve().then(() => (init__4(), __exports4)))
+        __memo(() => Promise.resolve().then(() => (init__4(), __exports4))),
+        __memo(() => Promise.resolve().then(() => (init__5(), __exports5)))
       ],
       routes: [
         {
@@ -6481,6 +6569,13 @@ var manifest = (() => {
           pattern: /^\/contact\/?$/,
           params: [],
           page: { layouts: [0], errors: [1], leaf: 3 },
+          endpoint: null
+        },
+        {
+          id: "/services",
+          pattern: /^\/services\/?$/,
+          params: [],
+          page: { layouts: [0], errors: [1], leaf: 4 },
           endpoint: null
         }
       ],

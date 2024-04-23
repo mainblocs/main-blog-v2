@@ -5,7 +5,7 @@
 
 
 {#if data?.project?.slug}
-<article class="mx-auto max-w-7xl mt-40 sm:mt-48 lg:mt-60 flex flex-col gap-16 p-3">
+<article class="mx-auto max-w-7xl mt-40 sm:mt-48 lg:mt-60 flex flex-col gap-16 p-3" >
     <div class="max-w-2xl lg:max-w-none text-center flex flex-col gap-12">
         <h1>
             <span class="block font-display text-base font-semibold text-neutral-950"

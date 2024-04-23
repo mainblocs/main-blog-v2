@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { showModle } from './modalstore.svelte';
+	import { showModal } from './modalstore.svelte';
 
 	let emailStore = $state({
 		error: false,
@@ -19,7 +19,7 @@
 			emailStore.error = true;
 			return;
 		}
-		showModle('Thank you for subscribing!', 1500);
+		showModal('Thank you for subscribing!', 1500);
 		emailStore.value = '';
 		goto('/');
 	}
@@ -48,8 +48,8 @@
 				onclick={subscribe}
 				aria-label="Submit"
 				class="flex aspect-square h-full items-center justify-center rounded-xl bg-black text-white
-				transition hover:bg-neutral-800">
-				<svg viewBox="0 0 16 6" aria-hidden="true" class="w-4 text-white">
+				transition hover:bg-neutral-800 mr-2">
+				<svg viewBox="0 0 16 6" aria-hidden="true" class="w-6 h-full text-white">
 					<path
 						fill="white"
 						fill-rule="evenodd"

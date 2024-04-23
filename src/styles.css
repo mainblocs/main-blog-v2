@@ -73,6 +73,17 @@
 	--bluebg: #2c1e4a;
 	--input-highlight: #8ec4ef;
 	--input-shadow: #e3f2fdd7;
+	--container-width: 1800px;
+	--offset-sides: 16px;
+	--ease-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+	--ease-cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	--ease-inout-quart: cubic-bezier(0.76, 0, 0.24, 1);
+	--border: #eee;
+	--white: #fff;
+	--black: #000;
+	--selectbg: #eaeaea;
+	--input-highlight: #8ec4ef;
+	--input-shadow: #e3f2fdd7;
 }
 
 @tailwind base;

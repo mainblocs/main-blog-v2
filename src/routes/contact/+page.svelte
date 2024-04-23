@@ -1,7 +1,8 @@
 <script lang="ts">
     // @ts-nocheck
     import { goto } from '$app/navigation'
-    import { onMount } from 'svelte'
+	import { showModal } from '$src/components/modalstore.svelte';
+	import { onMount } from 'svelte';
   
     function submit() {
       if (
@@ -57,7 +58,7 @@
         return
       }
   
-      showModle(
+      showModal(
         'Thank you for contacting us. We will get back to you soon.',
         3000,
       )
@@ -95,7 +96,7 @@
         errorMessage: 'plese enter your budget',
       },
     })
-    $effect(() => {
+    onMount(() => {
         data = {
           name: {
             value: '',
@@ -131,7 +132,7 @@
     
 </script>
   
-<section class="bg-bgprimary py-32 mt-[70px] text-white">
+<section class="bg-bgprimary py-32 mt-[70px] text-white" >
  <div class="wrapper px-4">
   <div class="mx-auto max-w-2xl lg:max-w-none ">
     <div >
@@ -414,7 +415,7 @@
             class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2
             border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"
             onclick={submit}>
-            <h3 class="relative py-2 px-8">Let’s work together</h3>
+            <span class="relative py-2 px-8">Let’s work together</span>
           </button>
         </form>
       </div>

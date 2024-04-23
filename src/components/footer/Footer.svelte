@@ -44,14 +44,14 @@
 					<span>San Francisco, CA 94105</span>
 
 				</div>
-				<div class="flex gap-4">
-					<span class="w-8 h-8">
+				<div class="flex gap-3">
+					<span class="w-12 h-12">
 						<Facebook />
 					</span>
-					<span class="w-8 h-8">
+					<span class="w-12 h-12">
 						<Twitter />
 					</span>
-					<span class="w-8 h-8">
+					<span class="w-12 h-12">
 						<Instagram />
 					</span>
 

@@ -3,14 +3,25 @@
 	import Arrow from '$components/icons/arrow.svelte';
 </script>
 
-<section class="bg-bgprimary text-white hero py-24 z-50">
+<style>
+	.homepage__intro .title-houses {
+		color: #ff6c89;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		margin: -28px 0 0;
+	}
+</style>
+
+<section class="bg-bgprimary text-white hero py-12 sm:py-24 z-50 section min-h-screen">
 	<div class="wrapper px-4">
 		<div class="py-32">
 			<div class="flex flex-col gap-16 md:flex-row md:gap-8">
-				<div class="relative w-full md:w-2/3">
+				<div class="relative w-full md:w-2/3 homepage__intro">
 					<h3
-						class="leading-[.9971em] tracking-[-0.01em] font-[yoga] text-3xl sm:text-5xl md:text-7xl
-						lg:text-8xl font-bold w-full md:max-w-[400px] text-wrap">
+						class="leading-[.9971em] tracking-[-0.01em] font-[yoga] text-5xl sm:text-5xl md:text-7xl
+						lg:text-8xl font-bold w-full md:max-w-[400px] text-wrap scrolling-title title-huge
+						title-houses">
 						Design the ​future
 					</h3>
 					<div class="hidden md:block">

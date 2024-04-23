@@ -22,7 +22,7 @@
 		</div>
 		<div>
 			<h3
-				class="text-2xl md:text-5xl font-yoga text-red-500 max-w-[600px] text-wrap py-4 md:py-12
+				class="text-2xl md:text-5xl font-yoga text-[#ff6c89] max-w-[600px] text-wrap py-4 md:py-12
 				md:leading-[60px]">
 				We design, develope, and promote shopify stores.
 			</h3>

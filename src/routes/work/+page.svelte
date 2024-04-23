@@ -3,7 +3,7 @@
   export let data
 </script>
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8 mt-40 sm:mt-32 lg:mt-60">
+<div class="mx-auto max-w-7xl px-6 lg:px-8 mt-40 sm:mt-32 lg:mt-60" >
   <div class="max-w-2xl lg:max-w-none">
     <div style="opacity: 1; transform: none;">
       <h1>

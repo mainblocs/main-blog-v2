@@ -44,6 +44,7 @@
 	style="width: 100%;"
 	class="flex-col justify-center md:flex-row flex-wrap gap-6 bg-white w-full z-50 min-h-[450px]
 	pt-12 hide left-0 top-[45px] flex"
+	data-aos="fade-in"
 	class:fadeIn={activeIndex == 2}
 	class:visible={activeIndex == 2}
 	class:fadeOut={activeIndex != 2}>

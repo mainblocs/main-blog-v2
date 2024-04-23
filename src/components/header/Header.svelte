@@ -28,7 +28,9 @@
 	}
 </script>
 
-<section class="bg-bgprimary font-[yoga] fixed top-0 left-0 w-full header z-[10000] px-4 pt-4 pb-2">
+<section
+	class="bg-bgprimary font-[yoga] fixed top-0 left-0 w-full header z-[10000] px-4 pt-4 pb-2"
+	data-aos="fade-in">
 	<div class="wrapper" use:clickOutside onmouseleave={() => changeOpenMenuIndex(0)}>
 		<nav class="flex items-center justify-between relative">
 			<div class="w-[300px]">
