@@ -3,6 +3,7 @@
 	import Clients from '../components/Clients.svelte';
 	import Hero from '../components/Hero.svelte';
 	import Wedo from '../components/Wedo.svelte';
+	export const prerender = true;
 </script>
 
 <style>

@@ -22,7 +22,7 @@ export const navData = $state({
 		},
 		{
 			title: 'services',
-			link: '/services',
+			link: '/#services',
 			name: 'services',
 			id: 'services',
 			index: 3

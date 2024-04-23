@@ -8,6 +8,8 @@
 		navData.showPhoneMenu = false;
 		navData.activeIndex = 0;
 	});
+	export const prerender = true;
+	export const ssr = true;
 </script>
 
 <style>

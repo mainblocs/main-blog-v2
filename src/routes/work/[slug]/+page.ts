@@ -1,6 +1,7 @@
 import { getAllProjects } from '$src/lib/projects';
 import type { LoadEvent } from '@sveltejs/kit';
 export const prerender = true;
+export const ssr = true;
 /**
  *
  * @imort LoadEvent from @sveltejs/kit

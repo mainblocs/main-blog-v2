@@ -3,7 +3,7 @@
 	import Circle from './icons/Circle.svelte';
 </script>
 
-<section class="bg-white">
+<section class="bg-white" id="services">
 	<div class="wrapper py-12 md:py-32 flex flex-col gap-12 px-4">
 		<div class="flex justify-center flex-col items-center w-full">
 			<Logo />

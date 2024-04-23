@@ -44,12 +44,9 @@
 					{#each navData.navItems as item, index}
 						<li
 							class="navMenuLink"
-							id={item.id}
 							on:click_outside={() => changeOpenMenuIndex(0)}
 							onmouseenter={() => changeOpenMenuIndex(item.index)}>
-							<a class="navMenuLinkContent" href={item.link} title={item.title} id={item.id}>
-								{item.title}
-							</a>
+							<a class="navMenuLinkContent" href={item.link} title={item.title}>{item.title}</a>
 
 						</li>
 					{/each}
