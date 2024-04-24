@@ -17,7 +17,7 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-cloudflare": "1.0.0-next.45",
+		"@sveltejs/adapter-cloudflare": "4.3.0",
 		"@sveltejs/adapter-cloudflare-node": "https://github.com/wackfx/adapter-cloudflare-node",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
