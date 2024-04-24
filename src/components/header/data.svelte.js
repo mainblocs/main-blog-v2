@@ -8,7 +8,7 @@ export const navData = $state({
 	navItems: [
 		{
 			title: 'about',
-			link: '/',
+			link: '/about',
 			name: 'about',
 			id: 'about',
 			index: 1

@@ -74,9 +74,15 @@
 				</ul>
 			</div>
 			<div class="md:hidden">
-				<button onclick={toggleMenu}>
-					<img src="/menu.svg" class="w-8 h-8" alt="Menu" />
-				</button>
+				{#if navData.showPhoneMenu == !true}
+					<button onclick={toggleMenu}>
+						<img src="/menu.svg" class="w-8 h-8" alt="Menu" />
+					</button>
+				{:else}
+					<button onclick={toggleMenu}>
+						<img src="/close.svg" class="w-8 h-8" alt="Menu" />
+					</button>
+				{/if}
 
 			</div>
 

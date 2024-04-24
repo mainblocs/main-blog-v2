@@ -3,8 +3,8 @@
 	import Circle from './icons/Circle.svelte';
 </script>
 
-<section class="bg-white" id="services">
-	<div class="wrapper py-12 md:py-32 flex flex-col gap-12 px-4">
+<section class="" id="services">
+	<div class="wrapper py-12 md:py-16 flex flex-col gap-12 px-4">
 		<div class="flex justify-center flex-col items-center w-full">
 			<Logo />
 		</div>
@@ -14,8 +14,8 @@
 				<p class="font-comsans text-xl">Elevate your brand and make your mark in history</p>
 			</div>
 
-			<div class="w-1/2">
-				<div class="w-48 ml-32 h-52 md:ml-52 mt-4 md:mt-0">
+			<div class="w-full sm:w-1/2 flex justify-center">
+				<div class="w-32 md:w-64  h-24 md:ml-52 mt-4 md:mt-0">
 					<Circle />
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 				</span>
 			</div>
 		</div>
-		<div class="bg-[#43302A] md:mt-8 py-24 flex flex-col md:flex-row gap-2 items-center">
+		<div class="bg-[#43302A] md:mt-8 py-24 flex flex-col md:flex-row gap-2 items-center md:mb-12">
 			<div class="w-full md:w-1/2">
 				<span
 					class="w-2/3 block max-w-[500px] border-t-2 border-white border-spacing-3 px-4 md:px-16 " ></span>
@@ -70,7 +70,7 @@
 					successful Shopify ecommerce store
 				</h3>
 			</div>
-			<div class="w-full md:w-1/2 p-4">
+			<div class="w-full md:w-1/2 p-4 ">
 				<img
 					src="s2.webp"
 					alt="Shopify"

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import Open from '$components/icons/open.svelte';
 	let hoverState = $state({
 		index: 0,

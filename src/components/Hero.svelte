@@ -35,13 +35,13 @@
 					</div>
 				</div>
 				<div class="w-2/3 md:w-1/3">
-					<button class="font-[yoga]">
+					<a class="font-[yoga]" href="/contact">
 						<h3
 							class="text-md md:text-2xl font-bold rounded-full border-spacing-1 border-2
 							border-white p-4 md:p-6 lg:py-8 lg:px-8 xl:py-8 xl:px-12">
 							Work with us
 						</h3>
-					</button>
+					</a>
 				</div>
 			</div>
 			<WorksHero />

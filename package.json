@@ -32,7 +32,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@shopify/shopify-api": "^9.7.2",
+		"@shopify/storefront-api-client": "^0.3.3",
 		"@studio-freight/lenis": "^1.0.42",
-		"@sveltejs/adapter-cloudflare-workers": "^2.4.0"
+		"@sveltejs/adapter-cloudflare-workers": "^2.4.0",
+		"install": "^0.13.0",
+		"shopify-buy": "^2.21.1"
 	}
 }

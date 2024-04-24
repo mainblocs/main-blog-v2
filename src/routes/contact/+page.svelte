@@ -413,7 +413,7 @@
           </div>
           <button
             class="text-md md:text-xl font-bold rounded-full border-spacing-1 border-2
-            border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12"
+            border-white p-4 md:p-6 lg:px-8 lg:py-4 xl:px-12 max-w-[350px] text-center mt-12 hover:opacity-60"
             onclick={submit}>
             <span class="relative py-2 px-8">Let’s work together</span>
           </button>

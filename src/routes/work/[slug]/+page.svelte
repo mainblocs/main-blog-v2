@@ -103,7 +103,7 @@
                     loading="lazy"
                     decoding="async"
                     data-nimg="1"
-                    class="h-24 w-24 p-2 object-contain bg-slate-400    sm:aspect-[7/9] sm:h-auto sm:w-full sm:p-16"
+                    class="h-24 w-24 p-4 object-contain bg-slate-400    sm:aspect-[7/9] sm:h-1/2 sm:w-full sm:p-12"
                     src={data?.project?.logo}
                     style="color: transparent;"
                 />
